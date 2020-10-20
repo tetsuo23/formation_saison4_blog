@@ -1,0 +1,63 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Recherchez par titre"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Rechercher 
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Liste des blogs</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let blog of blogs; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveBlog(blog, i)"
+      >
+        {{ blog.title }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllBlogs()">
+      kill them
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentBlog">
+      <h4>Blog</h4>
+      <div>
+        <label><strong>Titre:</strong></label> {{ currentBlog.title }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentBlog.description }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentBlog.published ? "Publié" : "En attente" }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/blogs/{{ currentBlog.id }}">
+        Modifier
+      </a>
+    </div>
+
+    <div *ngIf="!currentBlog">
+      <br />
+      <p>Choisissez un article de blog...</p>
+    </div>
+  </div>
+</div>
