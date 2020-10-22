@@ -1,0 +1,19 @@
+.wait{
+background-color:rgb(214, 81, 4) ;
+color:#ddd
+}
+#del{
+background-color: rgb(145, 6, 6);
+color:#ddd
+}
+#up{
+background-color: rgb(5, 126, 31);
+color:#ddd
+}
+
+.description {
+ margin-top: 2%; 
+ padding:2%;
+ background-color: rgb(252, 246, 239); 
+}
+

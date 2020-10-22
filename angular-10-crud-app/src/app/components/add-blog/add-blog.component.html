@@ -2,7 +2,7 @@
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Titre</label>
         <input
           type="text"
           class="form-control"
@@ -24,12 +24,12 @@
         />
       </div>
 <app-upload></app-upload>
-      <button (click)="saveBlog()" class="btn btn-success">Submit</button>
+      <button (click)="saveBlog()" class="btn btn-success">Envoyer</button>
     </div>
 
     <div *ngIf="submitted">
-      <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newBlog()">Add</button>
+      <h4>C'est parti !</h4>
+      <button class="btn btn-success" (click)="newBlog()">Ajouter</button>
     </div>
   </div>
 </div>

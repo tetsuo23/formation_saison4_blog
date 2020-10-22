@@ -56,7 +56,7 @@ export class BlogDetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'The blog was updated successfully!';
+          this.message = 'Mise à jour réussie !';
         },
         error => {
           console.log(error);

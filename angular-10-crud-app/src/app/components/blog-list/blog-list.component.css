@@ -1,0 +1,32 @@
+.list-group-item{
+    margin-bottom: 2%;
+    background-color: rgb(195, 192, 201);
+}
+.list-group-item:hover{
+  color:#eee;
+    background-color: rgb(42, 41, 46);
+}
+.list-group-item.active{
+    color:#eee;
+      background-color: rgb(214, 81, 4);
+  }
+.detail{
+    /* padding: 0px 0px 5% 5% */
+    height: 65vh;
+    overflow-y:scroll;
+    padding:2% 5% 5% 10%
+}  
+.etat{
+    margin-top: 5%;
+}
+
+#sup {
+    background-color:rgb(145, 6, 6) ;
+    color: #eee;
+    box-shadow: 2px 2px 10px 10px  rgba(145, 6, 6, 0.63), 1px 1px 1px 1px rgb(241, 237, 237);
+   
+}
+#mod{
+    color:#eee;
+    background-color: rgb(214, 81, 4);
+}

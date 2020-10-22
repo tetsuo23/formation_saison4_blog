@@ -1,9 +1,9 @@
-<div style="width: 400px; margin: auto;">
+<div>
   <div *ngIf="currentBlog" class="edit-form">
     <h4>Blog</h4>
     <form>
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Titre</label>
         <input
           type="text"
           class="form-control"
@@ -13,7 +13,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description" class="description_int">Description</label>
         <input
           type="text"
           class="form-control"
@@ -21,45 +21,49 @@
           [(ngModel)]="currentBlog.description"
           name="description"
         />
+        <div class="description">
+            {{ currentBlog.description}}
+        </div>
+      
       </div>
 
       <div class="form-group">
         <label><strong>Status:</strong></label>
-        {{ currentBlog.published ? "Published" : "Pending" }}
+        {{ currentBlog.published ? "Publié" : "En attente" }}
       </div>
     </form>
 
     <button
-      class="badge badge-primary mr-2"
+      class="btn btn-md  mr-2 wait"
       *ngIf="currentBlog.published"
       (click)="updatePublished(false)"
     >
-      UnPublish
+      Mettre en attente
     </button>
     <button
       *ngIf="!currentBlog.published"
-      class="badge badge-primary mr-2"
+      class="btn btn-md mr-2 wait"
       (click)="updatePublished(true)"
     >
-      Publish
+      Publier
     </button>
 
-    <button class="badge badge-danger mr-2" (click)="deleteBlog()">
-      Delete
+    <button class="btn btn-md mr-2" id="del" (click)="deleteBlog()">
+      Effacer
     </button>
 
     <button
       type="submit"
-      class="badge badge-success"
+      class="btn btn-md" id="up"
       (click)="updateBlog()"
     >
-      Update
+      Mettre à jour
     </button>
     <p>{{ message }}</p>
   </div>
 
   <div *ngIf="!currentBlog">
     <br />
-    <p>Cannot access this Blog...</p>
+    <p>Blog inaccessible ...</p>
   </div>
 </div>

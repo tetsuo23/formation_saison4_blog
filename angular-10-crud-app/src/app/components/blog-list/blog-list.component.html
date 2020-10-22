@@ -31,8 +31,8 @@
       </li>
     </ul>
 
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllBlogs()">
-      kill them
+    <button class="m-3 btn btn-block" id="sup" (click)="removeAllBlogs()">
+      kill them All !!!
     </button>
   </div>
   <div class="col-md-6">
@@ -41,16 +41,16 @@
       <div>
         <label><strong>Titre:</strong></label> {{ currentBlog.title }}
       </div>
-      <div>
+      <div class="detail">
         <label><strong>Description:</strong></label>
         {{ currentBlog.description }}
       </div>
-      <div>
+      <div class="etat">
         <label><strong>Status:</strong></label>
         {{ currentBlog.published ? "Publié" : "En attente" }}
       </div>
 
-      <a class="badge badge-warning" routerLink="/blogs/{{ currentBlog.id }}">
+      <a class="btn btn-block" id="mod" routerLink="/blogs/{{ currentBlog.id }}">
         Modifier
       </a>
     </div>
