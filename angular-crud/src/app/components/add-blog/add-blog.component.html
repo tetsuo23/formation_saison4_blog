@@ -1,0 +1,45 @@
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-6">
+    <div id="add">
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+          <div class="form-group">
+            <label for="title">Titre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              [(ngModel)]="blog.title"
+              name="title"
+            />
+          </div>
+    
+          <div class="form-group des">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="5"
+              required
+              [(ngModel)]="blog.description"
+              name="description"
+            ></textarea>
+          </div>
+    
+          <button (click)="saveBlog()" class="btn btn-success">Envoyer</button>
+        </div>
+    
+        <div *ngIf="submitted">
+          <h4>C'est parti !</h4>
+          <button class="btn btn-success" (click)="newBlog()">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-upload></app-upload>
+  </div>
+ </div>
+</div>
