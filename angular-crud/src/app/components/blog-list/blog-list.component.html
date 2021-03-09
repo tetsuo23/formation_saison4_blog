@@ -13,7 +13,7 @@
           type="button"
           (click)="searchTitle()"
         >
-          Rechercher 
+          Rechercher
         </button>
       </div>
     </div>
@@ -50,7 +50,11 @@
         {{ currentBlog.published ? "Publié" : "En attente" }}
       </div>
 
-      <a class="btn btn-block" id="mod" routerLink="/blogs/{{ currentBlog.id }}">
+      <a
+        class="btn btn-block"
+        id="mod"
+        routerLink="/blogs/{{ currentBlog.id }}"
+      >
         Modifier
       </a>
     </div>
@@ -58,6 +62,16 @@
     <div *ngIf="!currentBlog">
       <br />
       <p>Choisissez un article de blog...</p>
+    </div><div class="card-header">Liste des images</div>
+    <div class="card images">
+      
+      <div class="" *ngFor="let file of fileInfos | async">
+        <div class="tableau">
+          <!-- <p><a href="{{ file.url }}">{{ file.name }}</a></p> -->
+
+          <img src="{{ file.url }}" alt="{{ file.name }}" height="120px" class="item" />
+        </div>
+      </div>
     </div>
   </div>
 </div>

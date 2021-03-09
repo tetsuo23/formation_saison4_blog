@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+
 
 const baseUrl = 'http://localhost:8080/api/blogs';
 
@@ -8,6 +10,8 @@ const baseUrl = 'http://localhost:8080/api/blogs';
   providedIn: 'root'
 })
 export class BlogService {
+
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -37,5 +41,8 @@ export class BlogService {
 
   findByTitle(title): Observable<any> {
     return this.http.get(`${baseUrl}?title=${title}`);
+  }
+  getFiles(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/files`);
   }
 }

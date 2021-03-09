@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
+import { UploadService } from './../../services/upload.service';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-blog-list',
@@ -13,10 +18,14 @@ export class BlogListComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
-  constructor(private blogService: BlogService) { }
+  fileInfos: Observable<any>;
+  selectedFiles: FileList;
+
+  constructor(private blogService: BlogService, private uploadService: UploadService) { }
 
   ngOnInit(): void {
     this.retrieveBlogs();
+    this.fileInfos = this.uploadService.getFiles();
   }
 
   retrieveBlogs(): void {
@@ -65,4 +74,5 @@ export class BlogListComponent implements OnInit {
           console.log(error);
         });
   }
+  
 }

@@ -30,3 +30,14 @@
     color:#eee;
     background-color: rgb(214, 81, 4);
 }
+.item {
+   
+}
+
+.tableau {    
+    order:4; 
+}
+.card{
+    flex-wrap:wrap;display:flex;
+    flex-direction: row!important;
+}
